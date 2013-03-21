@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500' rel='stylesheet' type='text/css'>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel=styleSheet href="style.css" />
+<title>Untitled Document</title>
+<link type="text/css" href="jquery-ui-1.8.23.custom.css" rel="Stylesheet" />
+<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.23.custom.min.js"></script>
+</head>
+<body>
+	<div id="whitetop"></div>
+	
+    <div id="menu">
+    	<img src="ventureganglogo2.png" width="60"/>
+        <div id="sitename">
+        	Alain Design
+      	</div>
+        <a href="#">
+        	Contact
+        </a>
+        <a href="#">
+        	Home
+        </a>
+    
+    </div>
+	<div id="slider"></div>
+	<div id="wrap">
+        <div id="headline"> 
+        	<div id="ttitle">Hey</div>
+        Check out this selection of my hand crafted works.</div>
+		<div id="works" >
+<div class="blah">    
+    <div class="test">
+        <img class="thumb1" src="http://i45.tinypic.com/2145lll.jpg"/>
+        <img class="thumb2" src="http://i50.tinypic.com/nm18pd.jpg" />
+    </div>
+    <h3 class="sitename"> The Dariorialist </h3>
+    <h4 class="subtitle"> Blog </h4>
+</div> 
+    <div class="blah">    
+    <div class="test">
+        <img class="thumb1" src="fubizV2-230x140.jpg"/>
+        <img class="thumb2" src="topito-2.jpg" />
+    </div>
+    <h3 class="sitename"> Some Example </h3>
+    <h4 class="subtitle"> Sites </h4>
+</div>  
+        <div class="blah">    
+    <div class="test">
+        <img class="thumb1" src="Garance-V3_2.jpg"/>
+        <img class="thumb2" src="topito-2.jpg" />
+    </div>
+    <h3 class="sitename"> Whatever Faces </h3>
+    <h4 class="subtitle"> Facebook </h4>
+</div>  
+<div class="blah" style="margin-right:0px;" >    
+    <div class="test">
+        <img class="thumb1" src="topito-230x140.jpg"/>
+        <img class="thumb2" src="http://i50.tinypic.com/nm18pd.jpg" />
+    </div>
+    <h3 class="sitename"> The LastThumbnail </h3>
+    <h4 class="subtitle"> Done </h4>
+</div>  
+
+<div class="blah">    
+    <div class="test">
+        <img class="thumb1" src="http://i45.tinypic.com/2145lll.jpg"/>
+        <img class="thumb2" src="http://i50.tinypic.com/nm18pd.jpg" />
+    </div>
+    <h3 class="sitename"> The Dariorialist </h3>
+    <h4 class="subtitle"> Blog </h4>
+</div> 
+    <div class="blah">    
+    <div class="test">
+        <img class="thumb1" src="fubizV2-230x140.jpg"/>
+        <img class="thumb2" src="topito-2.jpg" />
+    </div>
+    <h3 class="sitename"> Some Example </h3>
+    <h4 class="subtitle"> Sites </h4>
+</div>  
+        <div class="blah">    
+    <div class="test">
+        <img class="thumb1" src="Garance-V3_2.jpg"/>
+        <img class="thumb2" src="topito-2.jpg" />
+    </div>
+    <h3 class="sitename"> Whatever Faces </h3>
+    <h4 class="subtitle"> Facebook </h4>
+</div>  
+<div class="blah" style="margin-right:0px;">    
+    <div class="test">
+        <img class="thumb1" src="topito-230x140.jpg"/>
+        <img class="thumb2" src="http://i50.tinypic.com/nm18pd.jpg" />
+    </div>
+    <h3 class="sitename"> The LastThumbnail </h3>
+    <h4 class="subtitle"> Done </h4>
+</div>  
+
+
+
+		</div>
+        
+		</div>
+	</div>
+
+	<script>$(document).ready(function(e) {
+    
+$(".blah").bind ({mouseenter: function(e) {
+    
+    // indentifies element width and height        
+    var width = ($(this).width());
+    var height =($(this).height());
+    
+    //finds the location of the mouse from distance of 4 sides
+    //var A = distance from left side to mouse
+    //var B = distance from top side to mouse
+    //var C = distance from right side to mouse
+    //var D = distance from bottom side to mouse
+    var a = e.pageX - this.offsetLeft;
+    var b = e.pageY - this.offsetTop;
+    var c = width - a;
+    var d = height - b;
+    
+    //ABCD gives location of mouse
+    //Smallest value triggers event for that side
+    //if smallest is A trigger left side effect etc..
+    var small = Math.min(a,b,c,d);
+    
+    //change background color behind text
+    $(this).stop(true,true).animate({"background-color": "#339999"},{  duration: 450});
+    //change the color of subtitle text
+    $(this).find(".subtitle").stop(true,true).animate({"color": "#40e0e0"},{  duration: 570});
+    
+    //enter from left
+    if (small == a) {
+        $(this).find(".thumb2").stop(true,true).css("margin-left", "-230px").css("margin-top", "0px");
+        $(this).find(".thumb1").stop(true,true).animate({"margin-left": "230px"},{  duration: 300});
+        $(this).find(".thumb2").stop(true,true).animate({"margin-left": "0px"},{  duration: 300});
+
+            }
+    //enter from top
+    else if (small == b) {
+        $(this).find(".thumb2").stop(true,true).css("margin-left", "0px").css("margin-top", "-140px");
+        $(this).find(".thumb1").stop(true,true).animate({"margin-top": "140px"},{  duration: 300});
+        $(this).find(".thumb2").stop(true,true).animate({"margin-top": "0px"},{  duration: 300});
+            }
+    //enter from right
+    else if (small == c) {
+        $(this).find(".thumb2").stop(true,true).css("margin-left", "230px").css("margin-top", "0px");
+        $(this).find(".thumb1").stop(true,true).animate({"margin-left": "-230px"},{  duration: 300});
+        $(this).find(".thumb2").stop(true,true).animate({"margin-left": "0px"},{  duration: 300});
+        
+        }
+    //enter from bottom
+    else if (small == d) {
+        $(this).find(".thumb2").stop(true,true).css("margin-left", "0px").css("margin-top", "140px");
+        $(this).find(".thumb1").stop(true,true).animate({"margin-top": "-140px"},{ duration: 300});
+        $(this).find(".thumb2").stop(true,true).animate({"margin-top": "0px"},{ duration: 300});
+    }
+    else {};
+},
+    mouseleave: function(e) {
+    
+    // indentifies element width and height
+    var width = ($(this).width());
+    var height =($(this).height());
+        
+    //finds the location of the mouse from distance of 4 sides
+    //var A = distance from left side to mouse
+    //var B = distance from top side to mouse
+    //var C = distance from right side to mouse
+    //var D = distance from bottom side to mouse
+    var a = e.pageX - this.offsetLeft;
+    var b = e.pageY - this.offsetTop;
+    var c = width - a;
+    var d = height - b;
+    
+    //ABCD gives location of mouse
+    //Smallest value triggers event for that side
+    //if smallest is A trigger left side effect etc..
+    var small = Math.min(a,b,c,d);
+        
+    //change background color behind text
+    $(this).stop(true,true).animate({"background-color": "#1d1f1f"},{  duration: 450});
+    //change the color of subtitle text      
+    $(this).find(".subtitle").stop(true,true).animate({"color": "#515457"},{  duration: 570});
+        
+     //exit from left
+     if (small == a) {
+        $(this).find(".thumb1").stop(true,true).css("margin-left", "230px").css("margin-top", "0px");
+        $(this).find(".thumb2").stop(true,true).animate({"margin-left": "-230px"},{  duration: 300});
+        $(this).find(".thumb1").stop(true,true).animate({"margin-left": "0"},{  duration: 300});
+        $(this).find(".thumb2").queue(function () {
+            $(this).find(".thumb2").stop(true,true).css("margin-left", "230px");
+            $(this).dequeue();
+        });
+        }
+     //exit from top
+     else if (small == b) {
+        $(this).find(".thumb1").stop(true,true).css("margin-left", "0px").css("margin-top", "140px");
+        $(this).find(".thumb1").stop(true,true).animate({"margin-top": "0px"},{  duration: 300});
+        $(this).find(".thumb2").stop(true,true).animate({"margin-top": "-140px"},{  duration: 300});
+        $(this).find(".thumb2").queue(function () {
+                $(this).find(".thumb2").stop(true,true).css("margin-top", "0px");
+                $(this).find(".thumb2").stop(true,true).css("margin-left", "230px");
+                $(this).dequeue();
+       });
+       }
+     //exit from right
+     else if (small == c) {
+        $(this).find(".thumb1").stop(true,true).css("margin-left", "-230px").css("margin-top", "0px");
+        $(this).find(".thumb1").stop(true,true).animate({"margin-left": "0px"},{  duration: 300});
+        $(this).find(".thumb2").stop(true,true).animate({"margin-left": "230px"},{  duration: 300});
+         
+     }
+     //exit from bottom
+     else if (small == d) {
+        $(this).find(".thumb1").stop(true,true).css("margin-left", "0px").css("margin-top", "-140px");
+        $(this).find(".thumb2").stop(true,true).animate({"margin-top": "140px"},{  duration: 300});
+        $(this).find(".thumb1").stop(true,true).animate({"margin-top": "0px"},{  duration: 300});
+        $(this).find(".thumb2").queue(function () {
+                $(this).find(".thumb2").stop(true,true).css("margin-top", "0px");
+                $(this).find(".thumb2").stop(true,true).css("margin-left", "230px");
+                $(this).dequeue();
+       });     
+       }
+    else {};
+    }
+
+});
+
+});
+
+	</script>
+</body>
+</html>
