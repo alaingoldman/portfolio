@@ -68,7 +68,7 @@ body{
 	opacity: 0;
 }
 #slider .right{
-	position:relative; 
+	/*position:relative; */
 	margin-top: -390px;
 	margin-left: 500px;
 	opacity: 0;
