@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel=styleSheet href="style.css" />
 <title>Alain Design</title>
-<!-- <link type="text/css" href="jquery-ui-1.8.23.custom.css" rel="Stylesheet" /> -->
 <script type="text/javascript" src="jquery-1.8.3.js"></script>
 <script type="text/javascript" src="jquery-ui-1.9.2.custom.min.js"></script>
 </head>
@@ -27,8 +26,17 @@
 	</div>
 	<!-- Slider start here -->
 	<div id="slider">
+		<div id="container">
 		<img class="back" src="slide1a.png">
 		<img class="right" src="slide1b.png">
+		<img class="top" src="slide1c.png">
+		<img class="fade" src="slide1d.png">
+		<img class="left" src="">
+		<img class="left" src="">
+		<img class="left" src="">
+		<img class="left" src="">
+		
+		</div>
 	</div>
 	<!-- Slider end here -->
 	<div id="wrap">
@@ -118,8 +126,9 @@
 $('#slider').animate({
 	backgroundColor: "#e9e8e6"}, 1400, function(){
 		$('.back').animate({opacity: 1}, 1000, function(){
-			$('.right').animate({'marginLeft': '0px', opacity: 1},1300, function(){
-				console.log("we out cheyeah");
+			$('.right').animate({'marginLeft': '-350px', opacity: 1},1300, function(){
+				$('.fade').animate({opacity: .9},1200, function(){});
+				$('.top').animate({'marginTop': '0px', opacity: 1},{duration:1200, easing: 'easeOutBounce'});
 			});
 		}
 		);
