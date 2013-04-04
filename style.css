@@ -5,6 +5,13 @@
 body{
 	background-color: #070808;
 }
+
+::selection {
+	background: #3bd2cf; /* Safari */
+	}
+::-moz-selection {
+	background: #3bd2cf; /* Firefox */
+}
 #whitetop{
 	width: 100%;
 	min-width:800px;
@@ -100,8 +107,9 @@ body{
 	position: absolute;
 	left: 0;
 	top:0;
-	opacity: 1;
-	margin-left: -310px;
+	opacity: 0;
+	margin-left: -610px;
+	margin-top: 10px;
 }
 #wrap{
 	width: 980px;
