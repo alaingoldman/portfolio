@@ -7,10 +7,12 @@ body{
 }
 
 ::selection {
-	background: #3bd2cf; /* Safari */
+	background: #3bd2cf;
+	color: #fff; /* Safari */
 	}
 ::-moz-selection {
-	background: #3bd2cf; /* Firefox */
+	background: #3bd2cf; 
+	color:#fff; /* Firefox */
 }
 #whitetop{
 	width: 100%;
@@ -71,9 +73,9 @@ body{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	/*background-color: red;*/
 	position: relative;
-	}|
+	/*overflow: none;*/
+	}
 #slider img{
 	display: block;
 	margin-right: auto;
@@ -99,7 +101,7 @@ body{
 #slider .fade{
 	position: absolute;
 	left: 0;
-	top:0;
+	/*top: 0;*/
 	opacity: 0;
 	margin-left: -310px;
 }
@@ -110,6 +112,7 @@ body{
 	opacity: 0;
 	margin-left: -610px;
 	margin-top: 10px;
+	/*z-index: 100;*/
 }
 #wrap{
 	width: 980px;
