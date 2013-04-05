@@ -123,8 +123,7 @@
 	//Defining the content slider 
 	// set up:  1 animation -> callback function ... 2nd animation -> callback function
 function slider_a(){
-$('#slider').animate({
-	backgroundColor: "#e9e8e6"}, 1400, function(){
+$('#slider').animate({backgroundColor: "#e9e8e6"}, 1400, function(){
 		//this is the fading of the color of the slider
 		$('.back').animate({opacity: 1}, 1000, function(){
 			//this is the sliding in of the computer
@@ -141,8 +140,15 @@ $('#slider').animate({
 					$('#lego3').animate({'marginLeft': '-400px'},{duration:4000, queue: false})
 					$('#lego2').animate({'marginLeft': '-380px'},{duration:5000, queue: false,
 						complete: function(){
-							
-							
+							//fading off all the content
+							$('#container').delay(2500).animate({opacity:0},{duration:1000,
+								complete: function(){
+									//here i remove cointainer and everything inside of it
+									$('#container').css('display','none');
+									//fade the color back to the color in body
+									$('#slider').animate({backgroundColor: "#070808"},{duration:1000})
+								}
+							});
 					}})
 				});
 			});

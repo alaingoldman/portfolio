@@ -101,7 +101,7 @@ body{
 #slider .fade{
 	position: absolute;
 	left: 0;
-	/*top: 0;*/
+	top: 0;
 	opacity: 0;
 	margin-left: -310px;
 }
